@@ -1,23 +1,45 @@
 
 public class LivroDeNotas {
 	
-	private String NomeDoCurso;
+	private String nomeDoCurso;
+	private int numeroAlunos;
+	private int numeroDeProvas;
 	private int[][] notas;
 	
-	public LivroDeNotas(String nomeDoCurso, int[][] notas) {
+
+	public LivroDeNotas(String nomeDoCurso, int numeroAlunos, int numeroDeProvas) {
 		super();
-		NomeDoCurso = nomeDoCurso;
-		this.notas = notas;
+		this.nomeDoCurso = nomeDoCurso;
+		this.numeroAlunos = numeroAlunos;
+		this.numeroDeProvas = numeroDeProvas;
+		notas = new int[numeroAlunos][numeroDeProvas];
 	}
 
 	public String getNomeDoCurso() {
-		return NomeDoCurso;
+		return nomeDoCurso;
 	}
 
 	public void setNomeDoCurso(String nomeDoCurso) {
-		NomeDoCurso = nomeDoCurso;
+		this.nomeDoCurso = nomeDoCurso;
 	}
 
+	
+	public int getNumeroAlunos() {
+		return numeroAlunos;
+	}
+
+	public void setNumeroAlunos(int numeroAlunos) {
+		this.numeroAlunos = numeroAlunos;
+	}
+
+	public int getNumeroDeProvas() {
+		return numeroDeProvas;
+	}
+
+	public void setNumeroDeProvas(int numeroDeProvas) {
+		this.numeroDeProvas = numeroDeProvas;
+	}
+	
 	public int[][] getNotas() {
 		return notas;
 	}
@@ -25,7 +47,7 @@ public class LivroDeNotas {
 	public void setNotas(int[][] notas) {
 		this.notas = notas;
 	}
-	
+
 	public void processaNotas() {
 		
 		exibeNotas();

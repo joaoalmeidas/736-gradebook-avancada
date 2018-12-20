@@ -14,7 +14,7 @@ public class LivrodeNotasApp {
 							  {76, 72, 84},
 							  {87, 93, 73}};
 		
-		LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", arrayNotas);
+		LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", 8, 8);
 		
 		System.out.printf("Bem-vindo ao livro de notas de %n%s%n%n", meuLivroDeNotas.getNomeDoCurso());
 		
