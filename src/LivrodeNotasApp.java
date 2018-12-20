@@ -57,11 +57,6 @@ public class LivrodeNotasApp {
 			
 		}while(opcao != -999999);
 		
-		//LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", 8, 3);
-		
-		
-		
-		
 		meuLivroDeNotas.processaNotas();
 
 	}
