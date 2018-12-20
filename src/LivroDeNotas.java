@@ -193,4 +193,10 @@ public class LivroDeNotas {
 		
 	}
 	
+	public void daNota(int aluno, int prova, int nota){
+		
+		notas[aluno-1][prova-1] = nota;
+		
+	}
+	
 }
