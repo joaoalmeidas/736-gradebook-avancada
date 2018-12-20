@@ -171,13 +171,27 @@ public class LivroDeNotas {
 			
 			for(int prova : notas[estudante]) {
 				
-				System.out.printf("%8d", prova);
+				if(prova == -1) {
+					System.out.printf("        ");
+				}else {
+					System.out.printf("%8d", prova);
+				}
+
 				
 			}
 			
 			double media = retornaMedia(notas[estudante]);
-			System.out.printf("%9.2f%n", media);
 			
+			if(media == -1) {
+				
+				System.out.printf("         %n");
+				
+			}else {
+				
+				System.out.printf("%9.2f%n", media);
+				
+			}
+		
 		}
 	}
 	
@@ -195,7 +209,26 @@ public class LivroDeNotas {
 	
 	public void daNota(int aluno, int prova, int nota){
 		
-		notas[aluno-1][prova-1] = nota;
+		if(aluno > notas.length || aluno <= 0 ) {
+			
+			System.out.printf("Aluno não encontrado!\n");
+			
+		}else if(prova > notas[0].length || prova <= 0) {
+			
+			System.out.printf("Prova não encontrada!\n");
+			
+		}else if(notas[aluno][prova] != -1) {
+			
+			System.out.printf("Nota já cadastrada!\n");
+			
+		}else {
+			
+			notas[aluno-1][prova-1] = nota;
+			System.out.println("Nota cadastrada com sucesso!\n");
+			
+		}
+		
+		
 		
 	}
 	

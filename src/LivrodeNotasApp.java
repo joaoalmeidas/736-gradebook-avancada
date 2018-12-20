@@ -1,22 +1,66 @@
+import java.util.Scanner;
 
 public class LivrodeNotasApp {
 
 	public static void main(String[] args) {
 		
-		int[][] arrayNotas = {{87, 96, 70},
-							  {68, 87, 90},
-							  {94, 100, 90},
-							  {100, 81, 82},
-							  {83, 65, 85},
-							  {78, 87, 65},
-							  {85, 75, 83},
-							  {91, 94, 100},
-							  {76, 72, 84},
-							  {87, 93, 73}};
+		Scanner input = new Scanner(System.in);
 		
-		LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", 8, 8);
+		int opcao =  -999999;
+		int alunos, provas, aluno, prova, nota;
 		
-		System.out.printf("Bem-vindo ao livro de notas de %n%s%n%n", meuLivroDeNotas.getNomeDoCurso());
+		
+		System.out.printf("Bem vindo a administração das notas.");
+		
+		
+		System.out.println("Livro de Notas inexistente.\nInsira as informações a seguir");
+		
+		System.out.printf("Número de alunos: ");
+		alunos = input.nextInt();
+		
+		System.out.printf("Número de avaliações: ");
+		provas = input.nextInt();
+		
+		LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", alunos, provas);
+		
+		do {
+			
+			System.out.printf("O que deseja fazer?\n"
+					+ "1 - Inserir uma nota para um aluno\n"
+					+ "2 - Exibir relatório\n");
+			
+			opcao = input.nextInt();
+			
+			if(opcao == 1) {
+				
+				System.out.println("Para qual aluno cadastrar a nota?");
+				aluno = input.nextInt();
+				
+				System.out.println("Em qual avaliação?");
+				prova = input.nextInt();
+				
+				System.out.println("Qual a nota?");
+				nota = input.nextInt();
+				
+				meuLivroDeNotas.daNota(aluno, prova, nota);
+				
+			}else if(opcao == 2){
+				
+				System.out.printf("Bem-vindo ao livro de notas de %n%s%n%n", meuLivroDeNotas.getNomeDoCurso());
+				meuLivroDeNotas.processaNotas();
+				
+			}else {
+					
+				System.out.println("Opção inválida, escolha uma das opções exibidas na tela.\n");
+					
+			}
+			
+		}while(opcao != -999999);
+		
+		//LivroDeNotas meuLivroDeNotas = new LivroDeNotas("Ciência da Computação - Programação 2", 8, 3);
+		
+		
+		
 		
 		meuLivroDeNotas.processaNotas();
 
