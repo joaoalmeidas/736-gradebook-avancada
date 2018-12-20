@@ -13,6 +13,8 @@ public class LivroDeNotas {
 		this.numeroAlunos = numeroAlunos;
 		this.numeroDeProvas = numeroDeProvas;
 		notas = new int[numeroAlunos][numeroDeProvas];
+		
+		inicializaNotas();
 	}
 
 	public String getNomeDoCurso() {
@@ -177,6 +179,18 @@ public class LivroDeNotas {
 			System.out.printf("%9.2f%n", media);
 			
 		}
+	}
+	
+	public void inicializaNotas() {
+		
+		for(int i = 0; i < notas.length; i++) {
+			for(int j = 0; j < notas[i].length; j++) {
+				
+				notas[i][j] = -1;
+				
+			}
+		}
+		
 	}
 	
 }
